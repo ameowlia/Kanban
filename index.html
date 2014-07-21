@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="kanban.css">
+  <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+  <script src='kanban.js'></script>
+  <title>Kanban</title>
+</head>
+
+<body>
+  <h1>Kanban Board</h1>
+  <div id='input'>
+    <input type='text' id='taskInput' placeholder='Enter new task'>
+  </div>
+
+
+  <span id = 'rows'>
+
+    <div id = 'backlog'>
+      <h3 class = 'col-title'>Backlog</h3>
+      <ul id = 'backlog-items', class = 'items'>
+      </ul>
+    </div>
+    <div id = 'in-progress'>
+      <h3 class = 'col-title'>In Progress</h3>
+      <ul id = 'in-progress-items', class = 'items'>
+      </ul>
+    </div>
+    <div id = 'done'>
+      <h3 class = 'col-title'>Done</h3>
+      <ul id = 'done-items', class = 'items'>
+      </ul>
+    </div>
+
+  </span>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

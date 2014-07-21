@@ -1,0 +1,60 @@
+h1{
+	font-family: Gill Sans;
+	font-weight: lighter;
+	font-size: 40pt;
+	text-align: center;
+	margin-bottom: 5px;
+	color: #7F7E76;
+}
+
+#backlog, #in-progress, #done {
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;top
+
+}
+
+#input{
+	width:300px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+input{
+	width: 300px;
+	font-size: 16pt;
+	color: #7F7E76;
+
+}
+
+.col-title{
+	text-align: center;
+	font-family: Gill Sans;
+	font-weight: lighter;
+	font-size: 20pt;
+	color: #7F7E76;
+}
+
+#rows {
+	vertical-align: top;
+	border-top: #FFCC00 solid;
+}
+
+.items{
+	font-family: Gill Sans;
+	font-weight: lighter;
+	font-size: 14pt;
+	list-style-type: none;
+}
+
+li{
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+
+li:hover {
+	color: #FFCC00;
+}
+
