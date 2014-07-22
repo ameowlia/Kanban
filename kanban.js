@@ -34,7 +34,6 @@ var updateTask = function(){
 	myDataRef.on('child_changed', function(snapshot) {
 		var uniq_key = snapshot.name()
 		var data = snapshot.val()
-		console.log(uniq_key)
 		$('#' + uniq_key).remove()
 
 		displayChatMessage(data.task, data.status, uniq_key)
@@ -61,14 +60,18 @@ var displayChatMessage = function(task, status, uniq_key) {
 var submitNewMessage = function(){
 	$('#taskInput').keypress(function (e) {
 		if (e.keyCode == 13) {
+
 			addMessageToFb()
 		}
 	});
 }
 
 var addMessageToFb = function(){
-	myDataRef.push({task: getTask(), status: "backlog"});
+	if (taskIsValid()){
+		myDataRef.push({task: getTask(), status: "backlog"});
+	}
 	clearTextBox()
+
 }
 
 var clearTextBox = function(){
@@ -76,9 +79,24 @@ var clearTextBox = function(){
 }
 
 var getTask = function(){
-	return $('#taskInput').val();
+	var text =  $('#taskInput').val();
+	return escapeString(text)
 }
 
+var taskIsValid = function(){
+
+	return true
+}
+
+var escapeString = function(text){
+	sanitizedText = text.replace(/&/g, '&amp;');
+	sanitizedText =sanitizedText.replace(/&/g, '&amp;')
+	sanitizedText =sanitizedText.replace(/</g, '&lt;')
+	sanitizedText =sanitizedText.replace(/>/g, '&gt;')
+	sanitizedText =sanitizedText.replace(/\"/g, '&quot;')
+	sanitizedText =sanitizedText.replace(/\'/g, '&#39;');
+	return sanitizedText
+}
 
 
 
